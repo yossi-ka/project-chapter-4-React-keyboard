@@ -1,0 +1,47 @@
+.keyboard {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(10, 1fr);
+}
+
+.key {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-size: 30px;
+  padding: 8px;
+  height: 45px;
+  width: 45px;
+  background-color: #eee;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.space {
+  grid-column: span 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  padding: 8px;
+  height: 45px;
+  background-color: #ccc;
+  border: 1px solid #000;
+  box-sizing: border-box;
+}
+.textarea {
+  width: 500px;
+  height: 200px;
+  background-color: white;
+  color: black;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
