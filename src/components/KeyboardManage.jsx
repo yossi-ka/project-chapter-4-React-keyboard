@@ -2,7 +2,7 @@ import Keyboard from "./Keyboard";
 import LanguageButtons from "./buttonsManagement/LanguageButtons";
 import ColorButtons from "./buttonsManagement/ColorButtons";
 import SizeButtons from "./buttonsManagement/SizeButtons";
-// import SpecialButtons from "./buttonsManagement/SpecialButtons";
+import SpecialButtons from "./buttonsManagement/SpecialButtons";
 import classes from "./Keyboard.module.css";
 import { useState } from "react";
 
@@ -180,11 +180,14 @@ function KeyboardManage() {
       </div>
       <ColorButtons setTextColor={setTextColor} />
       <SizeButtons setTextSize={setTextSize} />
-      {/* <SpecialButtons
+      <SpecialButtons
+        textColor={textColor}
+        textSize={textSize}
+        textareaContent={textareaContent}
         setTextareaContent={setTextareaContent}
         setTextColor={setTextColor}
         setTextSize={setTextSize}
-      /> */}
+      />
     </div>
   );
 }
