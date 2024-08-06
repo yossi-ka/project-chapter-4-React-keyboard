@@ -44,3 +44,15 @@
   align-items: center;
   gap: 50px;
 }
+.languages {
+  display: flex;
+  gap: 20px;
+}
+.languages button {
+  padding: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  background-color: #000;
+  border: 1px solid #eee;
+  color: #eee;
+}
