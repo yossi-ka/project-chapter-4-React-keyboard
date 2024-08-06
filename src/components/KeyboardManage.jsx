@@ -165,6 +165,7 @@ function KeyboardManage() {
   return (
     <div className={classes.main}>
       <div
+        dir={keyboardArrs[keyboardType].dir}
         className={classes.textarea}
         style={{ fontSize: textSize, color: textColor }}
       >
