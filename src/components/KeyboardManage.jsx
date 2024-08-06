@@ -1,7 +1,7 @@
 import Keyboard from "./Keyboard";
 import LanguageButtons from "./buttonsManagement/LanguageButtons";
 // import ColorButtons from "./buttonsManagement/ColorButtons";
-// import SizeButtons from "./buttonsManagement/SizeButtons";
+import SizeButtons from "./buttonsManagement/SizeButtons";
 // import SpecialButtons from "./buttonsManagement/SpecialButtons";
 import classes from "./Keyboard.module.css";
 import { useState } from "react";
@@ -163,7 +163,9 @@ function KeyboardManage() {
 
   return (
     <div className={classes.main}>
-      <div className={classes.textarea}>{textareaContent}</div>
+      <div className={classes.textarea} style={{ fontSize: textSize }}>
+        {textareaContent}
+      </div>
       <LanguageButtons setKeyboardType={setKeyboardType} />
       <div className={classes.keyboard} dir={keyboardArrs[keyboardType].dir}>
         <Keyboard
@@ -172,9 +174,9 @@ function KeyboardManage() {
           widthSpaceKey={keyboardType === 0 ? 3 : keyboardType === 3 ? 10 : 4}
         />
       </div>
-      <ColorButtons setTextColor={setTextColor} />
+      {/* <ColorButtons setTextColor={setTextColor} /> */}
       <SizeButtons setTextSize={setTextSize} />
-      <SpecialButtons setTextareaContent={setTextareaContent} />
+      {/* <SpecialButtons setTextareaContent={setTextareaContent} /> */}
     </div>
   );
 }
