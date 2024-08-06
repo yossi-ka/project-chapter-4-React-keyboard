@@ -1,6 +1,6 @@
 import Keyboard from "./Keyboard";
 import LanguageButtons from "./buttonsManagement/LanguageButtons";
-// import ColorButtons from "./buttonsManagement/ColorButtons";
+import ColorButtons from "./buttonsManagement/ColorButtons";
 import SizeButtons from "./buttonsManagement/SizeButtons";
 // import SpecialButtons from "./buttonsManagement/SpecialButtons";
 import classes from "./Keyboard.module.css";
@@ -155,6 +155,7 @@ const keyboardArrs = [
     ],
   },
 ];
+
 function KeyboardManage() {
   const [textareaContent, setTextareaContent] = useState("");
   const [keyboardType, setKeyboardType] = useState(0);
@@ -163,7 +164,10 @@ function KeyboardManage() {
 
   return (
     <div className={classes.main}>
-      <div className={classes.textarea} style={{ fontSize: textSize }}>
+      <div
+        className={classes.textarea}
+        style={{ fontSize: textSize, color: textColor }}
+      >
         {textareaContent}
       </div>
       <LanguageButtons setKeyboardType={setKeyboardType} />
@@ -174,9 +178,13 @@ function KeyboardManage() {
           widthSpaceKey={keyboardType === 0 ? 3 : keyboardType === 3 ? 10 : 4}
         />
       </div>
-      {/* <ColorButtons setTextColor={setTextColor} /> */}
+      <ColorButtons setTextColor={setTextColor} />
       <SizeButtons setTextSize={setTextSize} />
-      {/* <SpecialButtons setTextareaContent={setTextareaContent} /> */}
+      {/* <SpecialButtons
+        setTextareaContent={setTextareaContent}
+        setTextColor={setTextColor}
+        setTextSize={setTextSize}
+      /> */}
     </div>
   );
 }

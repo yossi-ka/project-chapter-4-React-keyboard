@@ -31,6 +31,7 @@
   box-sizing: border-box;
 }
 .textarea {
+  font-weight: 600;
   width: 500px;
   height: 200px;
   background-color: white;
@@ -56,6 +57,22 @@
   border: 1px solid #eee;
   color: #eee;
 }
-.sizes button{
-  
+.sizes{
+  display: flex;
+  gap: 10px;
+}
+.sizes button {
+  width: 70px;
+  height: 70px;
+}
+.colors {
+  display: flex;
+  gap: 10px;
+}
+.colors button {
+  color: white;
+  font-weight: 700;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 8px;
 }
