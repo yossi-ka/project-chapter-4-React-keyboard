@@ -1,4 +1,5 @@
 import Keyboard from "./Keyboard";
+import LanguageButtons from "./buttonsManagement/LanguageButtons";
 import classes from "./Keyboard.module.css";
 import { useState } from "react";
 
@@ -157,6 +158,7 @@ function KeyboardManage() {
   return (
     <div className={classes.main}>
       <div className={classes.textarea}>{textareaContent}</div>
+      <LanguageButtons />
       <div className={classes.keyboard} dir={keyboardArrs[keyboardType].dir}>
         <Keyboard
           arr={keyboardArrs[keyboardType].letters}
