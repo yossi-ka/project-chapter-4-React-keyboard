@@ -31,9 +31,10 @@
   box-sizing: border-box;
 }
 .textarea {
+  overflow: hidden;
   letter-spacing: 1.8px;
   font-weight: 700;
-  width: 500px;
+  width: 700px;
   height: 200px;
   background-color: white;
   color: black;

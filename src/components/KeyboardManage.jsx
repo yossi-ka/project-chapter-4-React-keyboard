@@ -6,39 +6,41 @@ import SizeButtons from "./buttonsManagement/SizeButtons";
 import classes from "./Keyboard.module.css";
 import { useState } from "react";
 
+export const historyActions = [];
+
 const keyboardArrs = [
   {
     language: "Hebrew",
     dir: "rtl",
     letters: [
-      "א",
-      "ב",
-      "ג",
-      "ד",
-      "ה",
+      "פ",
+      "ם",
+      "ן",
       "ו",
-      "ז",
-      "ח",
       "ט",
-      "י",
-      "כ",
+      "א",
+      "ר",
+      "ק",
+      "ף",
       "ך",
       "ל",
-      "מ",
-      "ם",
-      "נ",
-      "ן",
-      "ס",
+      "ח",
+      "י",
       "ע",
-      "פ",
-      "ף",
-      "צ",
-      "ץ",
-      " ",
-      "ק",
-      "ר",
+      "כ",
+      "ג",
+      "ד",
       "ש",
+      "ץ",
       "ת",
+      "צ",
+      "מ",
+      "נ",
+      "ה",
+      " ",
+      "ב",
+      "ס",
+      "ז",
     ],
   },
   {
@@ -177,10 +179,29 @@ function KeyboardManage() {
           arr={keyboardArrs[keyboardType].letters}
           setTextareaContent={setTextareaContent}
           widthSpaceKey={keyboardType === 0 ? 3 : keyboardType === 3 ? 10 : 4}
+          values={{
+            content: textareaContent,
+            color: textColor,
+            size: textSize,
+          }}
         />
       </div>
-      <ColorButtons setTextColor={setTextColor} />
-      <SizeButtons setTextSize={setTextSize} />
+      <ColorButtons
+        setTextColor={setTextColor}
+        values={{
+          content: textareaContent,
+          color: textColor,
+          size: textSize,
+        }}
+      />
+      <SizeButtons
+        setTextSize={setTextSize}
+        values={{
+          content: textareaContent,
+          color: textColor,
+          size: textSize,
+        }}
+      />
       {/* <SpecialButtons
         textColor={textColor}
         textSize={textSize}
