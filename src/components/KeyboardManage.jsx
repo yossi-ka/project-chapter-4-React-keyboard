@@ -154,7 +154,7 @@ const keyboardArrs = [
 ];
 function KeyboardManage() {
   const [textareaContent, setTextareaContent] = useState("");
-  const [keyboardType, setKeyboardType] = useState(3);
+  const [keyboardType, setKeyboardType] = useState(0);
 
   return (
     <div className={classes.main}>
