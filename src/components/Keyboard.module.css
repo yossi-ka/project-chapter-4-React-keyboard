@@ -57,7 +57,7 @@
   border: 1px solid #eee;
   color: #eee;
 }
-.sizes{
+.sizes {
   display: flex;
   gap: 10px;
 }
@@ -76,8 +76,3 @@
   font-size: 20px;
   border-radius: 8px;
 }
-
-
-
-textcolor = "green"
-setTextColor((prev)=>"black")
