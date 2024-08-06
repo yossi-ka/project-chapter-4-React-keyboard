@@ -10,3 +10,4 @@ function LanguageButtons() {
   );
 }
 
+export default LanguageButtons
