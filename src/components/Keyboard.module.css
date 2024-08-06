@@ -78,3 +78,13 @@
   font-size: 20px;
   border-radius: 8px;
 }
+.specials{
+  display: flex;
+  gap: 10px;
+}
+.specials button{
+  font-weight: 700;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 8px;
+}

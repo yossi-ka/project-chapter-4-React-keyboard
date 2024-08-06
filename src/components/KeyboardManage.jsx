@@ -2,11 +2,11 @@ import Keyboard from "./Keyboard";
 import LanguageButtons from "./buttonsManagement/LanguageButtons";
 import ColorButtons from "./buttonsManagement/ColorButtons";
 import SizeButtons from "./buttonsManagement/SizeButtons";
-// import SpecialButtons from "./buttonsManagement/SpecialButtons";
+import SpecialButtons from "./buttonsManagement/SpecialButtons";
 import classes from "./Keyboard.module.css";
 import { useState } from "react";
 
-export const historyActions = [];
+export const historyActions = [{ content: "", size: "20px", color: "black" }];
 
 const keyboardArrs = [
   {
@@ -202,14 +202,16 @@ function KeyboardManage() {
           size: textSize,
         }}
       />
-      {/* <SpecialButtons
-        textColor={textColor}
-        textSize={textSize}
-        textareaContent={textareaContent}
+      <SpecialButtons
+        values={{
+          content: textareaContent,
+          color: textColor,
+          size: textSize,
+        }}
         setTextareaContent={setTextareaContent}
         setTextColor={setTextColor}
         setTextSize={setTextSize}
-      /> */}
+      />
     </div>
   );
 }
