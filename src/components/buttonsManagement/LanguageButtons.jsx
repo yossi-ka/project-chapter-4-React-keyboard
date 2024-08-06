@@ -1,10 +1,5 @@
 import classes from "../Keyboard.module.css";
-function LanguageButtons(props) {
-
-  const changeLanguage = (num)=>{
-    props.setKeyboardType(num)
-  }
-
+function LanguageButtons() {
   return (
     <div className={classes.languages}>
       <button onClick={()=>{changeLanguage(0)}}>Hebrew</button>
