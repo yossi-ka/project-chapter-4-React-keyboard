@@ -1,4 +1,4 @@
-import classes from "./Keyboard.module.css";
+import classes from "../Keyboard.module.css";
 function LanguageButtons() {
   return (
     <div className={classes.languages}>
