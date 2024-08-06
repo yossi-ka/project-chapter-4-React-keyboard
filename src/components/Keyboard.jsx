@@ -6,7 +6,12 @@ function Keyboard(props) {
     props.setTextareaContent((prev) => prev + letter);
   }
   return props.arr.map((letter, key) => (
-    <KeyboardButton key={key} letter={letter} showLetter={showLetter} />
+    <KeyboardButton
+      key={key}
+      letter={letter}
+      showLetter={showLetter}
+      widthSpaceKey={props.widthSpaceKey}
+    />
   ));
 }
 export default Keyboard;

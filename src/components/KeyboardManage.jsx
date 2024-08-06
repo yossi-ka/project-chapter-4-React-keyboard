@@ -147,21 +147,21 @@ const keyboardArrs = [
       ">",
       "/",
       "?",
+      " ",
     ],
   },
 ];
-
 function KeyboardManage() {
   const [textareaContent, setTextareaContent] = useState("");
+  const [keyboardType, setKeyboardType] = useState(3);
   return (
     <div className={classes.main}>
-      <div className={classes.textarea} name="" id="">
-        {textareaContent}
-      </div>
-      <div className={classes.keyboard} dir={keyboardArrs[0].dir}>
+      <div className={classes.textarea}>{textareaContent}</div>
+      <div className={classes.keyboard} dir={keyboardArrs[keyboardType].dir}>
         <Keyboard
-          arr={keyboardArrs[0].letters}
+          arr={keyboardArrs[keyboardType].letters}
           setTextareaContent={setTextareaContent}
+          widthSpaceKey={keyboardType === 0 ? 3 : keyboardType === 3 ? 10 : 4}
         />
       </div>
     </div>
