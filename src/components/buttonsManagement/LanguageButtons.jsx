@@ -18,7 +18,7 @@ function LanguageButtons(props) {
           changeLanguage(1);
         }}
       >
-        English - up
+        English - UP
       </button>
       <button
         onClick={() => {
