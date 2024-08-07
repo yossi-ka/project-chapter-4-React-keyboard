@@ -1,17 +1,17 @@
-import classes from "./Keyboard.module.css";
+// import classes from "./Keyboard.module.css";
 import { historyActions } from "./KeyboardManage";
 import KeyboardButton from "./KeyboardButton";
 
 function Keyboard(props) {
   function showLetter(letter) {
-    const newAction = {
-      content: props.values.content + letter,
-      color: props.values.color,
-      size: props.values.size,
+    const newTextareaContent = {
+      letter: letter,
+      color: props.textareaContent[props.textareaContent.length - 1].color,
+      size: props.textareaContent[props.textareaContent.length - 1].size,
     };
-    historyActions.push(newAction);
-    console.log(historyActions);
-    props.setTextareaContent((prev) => prev + letter);
+    const newArrContent = [...props.textareaContent, newTextareaContent]
+    historyActions.push(newArrContent);
+    props.setTextareaContent(newArrContent);
   }
   return props.arr.map((letter, key) => (
     <KeyboardButton

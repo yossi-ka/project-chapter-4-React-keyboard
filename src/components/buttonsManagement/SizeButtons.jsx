@@ -3,14 +3,15 @@ import { historyActions } from "../KeyboardManage";
 
 function SizeButtons(props) {
   const changeSize = (sz) => {
-    const newAction = {
-      content: props.values.content,
-      color: props.values.color,
+    const newTextareaContent = {
+      letter: "",
+      color: props.textareaContent[props.textareaContent.length - 1].color,
       size: sz,
     };
-    historyActions.push(newAction);
-    console.log(historyActions);
-    props.setTextSize(sz);
+    props.setTextareaContent((prev) => {
+      historyActions.push([...prev, newTextareaContent]);
+      return [...prev, newTextareaContent];
+    });
   };
 
   return (

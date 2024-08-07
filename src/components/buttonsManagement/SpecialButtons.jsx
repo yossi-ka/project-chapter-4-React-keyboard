@@ -1,22 +1,31 @@
 import { historyActions } from "../KeyboardManage";
-import classes from "../Keyboard.module.css"
+import classes from "../Keyboard.module.css";
 
 function SpecialButtons(props) {
   function undo() {
     if (historyActions.length <= 1) return;
+    props.setTextareaContent(() => historyActions[historyActions.length - 2]);
     historyActions.pop();
-    const returnAction = historyActions[historyActions.length - 1];
-    props.setTextColor(returnAction.color);
-    props.setTextareaContent(returnAction.content);
-    props.setTextSize(returnAction.size);
   }
 
   function backspace() {
-    props.setTextareaContent((prev) => prev.slice(0, -1));
+    if (props.textareaContent.length === 1) return;
+    const newTextareaContent = props.textareaContent.splice(
+      0,
+      props.textareaContent.length - 1
+    );
+    historyActions.push(newTextareaContent);
+    props.setTextareaContent(newTextareaContent);
   }
 
   function clearAll() {
-    props.setTextareaContent("");
+    const newAction = {
+      content: "",
+      color: "black",
+      size: "20px",
+    };
+    historyActions.push(newAction);
+    props.setTextareaContent([newAction]);
   }
 
   return (

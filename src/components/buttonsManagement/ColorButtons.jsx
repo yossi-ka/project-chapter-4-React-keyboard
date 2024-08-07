@@ -3,14 +3,17 @@ import classes from "../Keyboard.module.css";
 
 function ColorButtons(props) {
   const changeColor = (col) => {
-    const newAction = {
-      content: props.values.content,
+    const newTextareaContent = {
+      letter: "",
       color: col,
-      size: props.values.size,
+      size: props.textareaContent[props.textareaContent.length - 1].size,
     };
-    historyActions.push(newAction);
-    console.log(historyActions);
-    props.setTextColor(col);
+    props.setTextareaContent((prev) => {
+      console.log([...prev, newTextareaContent]);
+      
+      // historyActions.push();
+      return [...prev, newTextareaContent];
+    });
   };
 
   return (
