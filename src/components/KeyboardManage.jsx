@@ -7,14 +7,13 @@ import classes from "./Keyboard.module.css";
 import { useState } from "react";
 import ShowText from "./buttonsManagement/ShowText";
 import keyboardArrs from "./keyboardArrs";
-export const historyActions = [];
+export const historyActions = [{ letter: "", color: "black", size: "20px" }];
 
 function KeyboardManage() {
+  const [keyboardType, setKeyboardType] = useState(0);
   const [textareaContent, setTextareaContent] = useState([
     { letter: "", color: "black", size: "20px" },
   ]);
-  historyActions.push(textareaContent);
-  const [keyboardType, setKeyboardType] = useState(0);
 
   return (
     <div className={classes.main}>

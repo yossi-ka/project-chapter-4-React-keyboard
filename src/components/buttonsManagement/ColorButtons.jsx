@@ -8,11 +8,11 @@ function ColorButtons(props) {
       color: col,
       size: props.textareaContent[props.textareaContent.length - 1].size,
     };
+
     props.setTextareaContent((prev) => {
-      console.log([...prev, newTextareaContent]);
-      
-      // historyActions.push();
-      return [...prev, newTextareaContent];
+      const newArrContent = [...prev, newTextareaContent];
+      historyActions.push(newArrContent);
+      return newArrContent;
     });
   };
 
