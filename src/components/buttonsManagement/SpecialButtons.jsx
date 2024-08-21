@@ -3,9 +3,14 @@ import classes from "../Keyboard.module.css";
 
 function SpecialButtons(props) {
   function undo() {
-    if (historyActions.length <= 1) return;
-    props.setTextareaContent(() => historyActions[historyActions.length - 2]);
-    historyActions.pop();
+    if (historyActions.length === 1) return;
+    console.log(historyActions);
+
+    props.setTextareaContent(() => {
+      historyActions.pop();
+      const HA = historyActions[historyActions.length - 1];
+      return HA;
+    });
   }
 
   function backspace() {
